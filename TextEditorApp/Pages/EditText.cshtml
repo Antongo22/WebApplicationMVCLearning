@@ -6,62 +6,22 @@
 
 <h1>Edit Text</h1>
 
-<div>
-    <button id="boldButton" onclick="formatText('bold')" class="format-button"><b>B</b></button>
-    <button id="italicButton" onclick="formatText('italic')" class="format-button"><i>I</i></button>
-    <button id="underlineButton" onclick="formatText('underline')" class="format-button"><u>U</u></button>
-</div>
-
-<div id="editor" contenteditable="true" style="border: 1px solid #000; padding: 10px; margin: 10px 0; min-height: 100px;">
-    @Html.Raw(Model.SavedText)
-</div>
-
 <form method="post">
-    <input type="hidden" id="formattedText" name="Text" />
+    <textarea id="editor" name="Text">@Html.Raw(Model.SavedText)</textarea>
     <button type="submit">Save</button>
 </form>
 
 <p>@Model.Message</p>
 
+<script src="https://cdn.tiny.cloud/1/pxd88ki9p3g5kqhd5xag8lesa025mnu0gp7zg7r4clhl69fd/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin">
+</script>
 <script>
-    function formatText(style) {
-        const editor = document.getElementById('editor');
-        document.execCommand(style, false, null);
-        editor.focus();
-        updateButtonStates();
-    }
-
-    function updateButtonStates() {
-        const boldButton = document.getElementById('boldButton');
-        const italicButton = document.getElementById('italicButton');
-        const underlineButton = document.getElementById('underlineButton');
-
-        boldButton.classList.toggle('active', document.queryCommandState('bold'));
-        italicButton.classList.toggle('active', document.queryCommandState('italic'));
-        underlineButton.classList.toggle('active', document.queryCommandState('underline'));
-    }
-
-    document.getElementById('editor').addEventListener('mouseup', updateButtonStates);
-    document.getElementById('editor').addEventListener('keyup', updateButtonStates);
-
-    document.querySelector('form').addEventListener('submit', function () {
-        const editor = document.getElementById('editor');
-        const formattedText = document.getElementById('formattedText');
-        formattedText.value = editor.innerHTML;
+    tinymce.init({
+        selector: '#editor',
+        plugins: 'advlist link lists table',
+        toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table',
+        menubar: false,
+        height: 300,
     });
 </script>
-
-<style>
-    .format-button {
-        padding: 5px 10px;
-        margin: 2px;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
-        cursor: pointer;
-    }
-
-        .format-button.active {
-            background-color: #007bff;
-            color: white;
-        }
-</style>
