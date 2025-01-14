@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35617.110 d17.13
+VisualStudioVersion = 17.13.35617.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMVCLearning", "WebApplicationMVCLearning\WebApplicationMVCLearning.csproj", "{FF983D42-601C-4D55-A508-559D7FDBE743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditorApp", "TextEditorApp\TextEditorApp.csproj", "{099DB3E8-4263-4B94-83C7-14255A3B6683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FF983D42-601C-4D55-A508-559D7FDBE743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF983D42-601C-4D55-A508-559D7FDBE743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF983D42-601C-4D55-A508-559D7FDBE743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{099DB3E8-4263-4B94-83C7-14255A3B6683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099DB3E8-4263-4B94-83C7-14255A3B6683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099DB3E8-4263-4B94-83C7-14255A3B6683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099DB3E8-4263-4B94-83C7-14255A3B6683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
