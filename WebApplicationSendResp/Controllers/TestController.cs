@@ -26,13 +26,12 @@ namespace WebApplicationSendResp.Controllers
             await Response.WriteAsJsonAsync(data);
         }
 
-        public async Task<IActionResult> File()
+        public async Task File()
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "test.txt");
             System.IO.File.WriteAllText(filePath, "This is a test file");
             Response.ContentType = "text/plain";
             await Response.SendFileAsync(filePath);
-            return new EmptyResult();
         }
 
         public async Task Status()
