@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Echo Controller";
+}
+
+<h1>Echo Controller</h1>
+
+<div>
+    <button onclick="sendGetRequest()">Send GET Request</button>
+    <button onclick="sendPostRequest()">Send POST Request</button>
+    <button onclick="sendHeadersRequest()">Get Headers</button>
+    <button onclick="sendQueryRequest()">Get Query Parameters</button>
+    <button onclick="sendBodyRequest()">Send Body</button>
+</div>
+
+<div id="response"></div>
+
+<script>
+    async function sendGetRequest() {
+        const response = await fetch('/Echo/Get');
+        const text = await response.text();
+        document.getElementById('response').innerText = text;
+    }   
+
+    async function sendPostRequest() {
+        const response = await fetch('/Echo/Post', { method: 'POST' });
+        const text = await response.text();
+        document.getElementById('response').innerText = text;
+    }
+
+    async function sendHeadersRequest() {
+        const response = await fetch('/Echo/Headers');
+        const json = await response.json();
+        document.getElementById('response').innerText = JSON.stringify(json, null, 2);
+    }
+
+    async function sendQueryRequest() {
+        const response = await fetch('/Echo/Query?param1=value1&param2=value2');
+        const json = await response.json();
+        document.getElementById('response').innerText = JSON.stringify(json, null, 2);
+    }
+
+    async function sendBodyRequest() {
+        const response = await fetch('/Echo/Body', {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: 'This is the request body'
+        });
+        const text = await response.text();
+        document.getElementById('response').innerText = text;
+    }
+</script>

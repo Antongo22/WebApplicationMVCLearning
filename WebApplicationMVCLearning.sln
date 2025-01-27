@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditorApp", "TextEditor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationSendResp", "WebApplicationSendResp\WebApplicationSendResp.csproj", "{748A3101-E99D-4F4F-889A-77352E8148BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationGetResp", "WebApplicationGetResp\WebApplicationGetResp.csproj", "{BB05C5FF-0E49-4216-B488-139905766963}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{748A3101-E99D-4F4F-889A-77352E8148BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{748A3101-E99D-4F4F-889A-77352E8148BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{748A3101-E99D-4F4F-889A-77352E8148BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB05C5FF-0E49-4216-B488-139905766963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB05C5FF-0E49-4216-B488-139905766963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB05C5FF-0E49-4216-B488-139905766963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB05C5FF-0E49-4216-B488-139905766963}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
